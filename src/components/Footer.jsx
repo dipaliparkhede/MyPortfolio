@@ -107,15 +107,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Credits */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-slate-500">
           <div>
             © {currentYear} {personalInfo.fullName}. All rights reserved.
           </div>
-          <div className="flex items-center gap-1 text-slate-400">
-            <span>Crafted with</span>
-            <span className="text-rose-500">♥</span>
-            <span>using React, Tailwind CSS & Vite</span>
-          </div>
+         
         </div>
 
       </div>

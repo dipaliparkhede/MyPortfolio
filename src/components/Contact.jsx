@@ -250,7 +250,7 @@ export default function Contact() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="e.g. Jane Doe"
+                      placeholder="e.g. Dipali Parkhede"
                       className={`w-full px-4 py-3 rounded-xl bg-black/25 dark:bg-black/25 bg-white border ${
                         errors.name ? 'border-rose-500' : 'border-white/10 dark:border-white/10 border-slate-300'
                       } text-white dark:text-white text-slate-900 text-sm focus:outline-none focus:border-violet-500 transition-colors`}
@@ -271,7 +271,7 @@ export default function Contact() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="e.g. jane@company.com"
+                      placeholder="e.g. name@company.com"
                       className={`w-full px-4 py-3 rounded-xl bg-black/25 dark:bg-black/25 bg-white border ${
                         errors.email ? 'border-rose-500' : 'border-white/10 dark:border-white/10 border-slate-300'
                       } text-white dark:text-white text-slate-900 text-sm focus:outline-none focus:border-violet-500 transition-colors`}
