@@ -1,0 +1,72 @@
+export const certifications = [
+  {
+    id: "nptel-java",
+    title: "NPTEL Elite Certification in Programming in Java",
+    issuer: "NPTEL (IIT Kharagpur / MoE, Govt. of India)",
+    date: "January – April 2026",
+    score: "96% (Elite + Gold Rank Category)",
+    badgeText: "Elite 96%",
+    category: "Programming & Algorithms",
+    credentialId: "NPTEL26CSJAVA96P",
+    credentialUrl: "https://nptel.ac.in",
+    description: "Rigorous 12-week certification covering advanced object-oriented paradigms, multithreading, Java Collections framework, exception handling, and socket network programming.",
+    skillsLearned: ["Core Java", "OOP Principles", "Collections Framework", "Multithreading", "Stream API", "JVM Internals"],
+    hasFile: false // Dynamic placeholder mode - user can drop real file in /assets/certificates/
+  },
+  {
+    id: "oracle-ai-foundations",
+    title: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+    issuer: "Oracle",
+    date: "October 30, 2025",
+    score: "Certified Associate",
+    badgeText: "Oracle Certified",
+    category: "Cloud & AI",
+    credentialId: "OCI-AI-2025-DP",
+    credentialUrl: "https://education.oracle.com",
+    description: "Demonstrated comprehensive understanding of foundational AI concepts, Large Language Models (LLMs), machine learning lifecycle, and Oracle Cloud AI services integration.",
+    skillsLearned: ["Oracle Cloud Infrastructure", "AI Fundamentals", "Generative AI Foundations", "OCI AI Services", "ML Lifecycle"],
+    hasFile: false
+  },
+  {
+    id: "oracle-data-science",
+    title: "Oracle Cloud Infrastructure Data Science Professional",
+    issuer: "Oracle",
+    date: "Certified Professional",
+    score: "Certified Professional",
+    badgeText: "Oracle Professional",
+    category: "Cloud & AI",
+    credentialId: "OCI-DSP-2025-DP",
+    credentialUrl: "https://education.oracle.com",
+    description: "Professional certification validating capabilities in architecting scalable machine learning workflows, model training, evaluation, and operationalizing MLOps pipelines on Oracle Cloud.",
+    skillsLearned: ["OCI Data Science", "MLOps Pipelines", "Model Deployment", "Data Engineering", "Cloud Computing"],
+    hasFile: false
+  },
+  {
+    id: "aws-linux-pro",
+    title: "Certificate Course for Linux & Amazon Web Services (AWS) Professional",
+    issuer: "Corporate Training Center LLP (Nexus)",
+    date: "2024",
+    score: "Professional Completion",
+    badgeText: "AWS & Linux",
+    category: "Cloud & DevOps",
+    credentialId: "NEXUS-AWS-LINUX-2024",
+    credentialUrl: null,
+    description: "Comprehensive industry training program focusing on production Linux administration, user security, Amazon EC2 provisioning, S3 bucket management, and Load Balancers configuration.",
+    skillsLearned: ["Linux Administration", "Amazon EC2", "Amazon S3", "Application Load Balancers", "VPC Basics", "Security Groups"],
+    hasFile: false
+  },
+  {
+    id: "ai-python-200hr",
+    title: "AI Python Programming (200 Hours Intensive)",
+    issuer: "ID Tech Solutions Pvt. Ltd. (Assoc. with NSDC & Hope Foundation)",
+    date: "March 31, 2024",
+    score: "200 Hours Completed",
+    badgeText: "NSDC Accredited",
+    category: "AI & Machine Learning",
+    credentialId: "IDT-NSDC-PY-2024",
+    credentialUrl: null,
+    description: "Government-recognized intensive 200-hour program in Python for Artificial Intelligence, data manipulation using Pandas and NumPy, exploratory data science, and predictive modeling.",
+    skillsLearned: ["Python for AI", "Data Analysis (Pandas, NumPy)", "Scikit-learn", "Machine Learning Foundations", "Statistical Analysis"],
+    hasFile: false
+  }
+];
