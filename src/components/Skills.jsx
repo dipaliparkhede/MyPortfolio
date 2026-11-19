@@ -24,7 +24,12 @@ import {
   Send, 
   AppWindow, 
   Users, 
-  CheckCircle2 
+  CheckCircle2,
+  Brain,
+  BarChart3,
+  LineChart,
+  Boxes,
+  FileSpreadsheet
 } from 'lucide-react';
 import { skillCategories } from '../data/skills';
 
@@ -54,7 +59,12 @@ const iconMap = {
   Send: Send,
   AppWindow: AppWindow,
   Users: Users,
-  CheckCircle2: CheckCircle2
+  CheckCircle2: CheckCircle2,
+  Brain: Brain,
+  BarChart3: BarChart3,
+  LineChart: LineChart,
+  Boxes: Boxes,
+  FileSpreadsheet: FileSpreadsheet
 };
 
 export default function Skills() {
@@ -81,7 +91,7 @@ export default function Skills() {
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-violet-500 to-cyan-400 rounded-full mt-3 mb-4" />
           <p className="max-w-2xl text-slate-400 dark:text-slate-400 text-slate-600 text-sm sm:text-base">
-            Categorized core proficiencies spanning modern frontend frameworks, backend microservices, cloud deployments, and developer tooling.
+            Categorized core proficiencies spanning full stack engineering, Python data science & machine learning libraries, Power BI analytics, and cloud infrastructure.
           </p>
         </div>
 

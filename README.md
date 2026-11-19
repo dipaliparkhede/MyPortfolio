@@ -19,12 +19,14 @@ My technical interests include frontend development, backend development, databa
 
 | Domain | Technologies & Competencies |
 | :--- | :--- |
-| **Programming Languages** | Java *(NPTEL Elite 96%)*, JavaScript (ES6+), TypeScript, Python |
+| **Programming Languages** | Python, Java *(NPTEL Elite 96%)*, JavaScript (ES6+), TypeScript |
+| **AI, Machine Learning & Data Science** | Machine Learning *(Random Forest, Logistic Regression, SVC)*, Deep Learning *(EfficientNet-B0)*, Large Language Models (LLMs) & Generative AI, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, FastAPI |
+| **Business Intelligence & Analytics** | Power BI *(Interactive Dashboards, Data Modeling, KPI Reporting)*, Exploratory Data Analysis (EDA) |
 | **Frontend Development** | React.js, Next.js, Tailwind CSS, HTML5, CSS3, Responsive Web Design |
 | **Backend Development** | Node.js, Express.js, RESTful APIs, JWT Authentication |
 | **Databases** | MongoDB *(Mongoose ORM)*, MySQL |
 | **Cloud & Infrastructure** | Amazon Web Services (AWS), Amazon EC2, Amazon S3, Load Balancers, Linux OS |
-| **Developer Tools** | Git, GitHub, Postman, VS Code |
+| **Developer & Data Tools** | Power BI, Git, GitHub, Postman, VS Code, Jupyter Notebook |
 | **Core Soft Skills** | Teamwork & Collaboration, Problem-Solving, Analytical Debugging |
 
 ---

@@ -3,10 +3,23 @@ export const skillCategories = [
     category: "Programming Languages",
     description: "Strong foundation in object-oriented and modern scripting languages",
     skills: [
-      { name: "Java", level: "Proficient", icon: "Coffee", note: "NPTEL Elite 96% Certification" },
+      { name: "Java", level: "Proficient", icon: "Coffee", note: "NPTEL Elite 96% Certification, OOP & Collections" },
+      { name: "Python", level: "Advanced", icon: "Terminal", note: "Data science, ML pipelines, automation & FastAPI" },
       { name: "JavaScript (ES6+)", level: "Advanced", icon: "Code2", note: "Modern asynchronous JS, closures, DOM" },
-      { name: "TypeScript", level: "Proficient", icon: "FileCode", note: "Static typing, interfaces & generics" },
-      { name: "Python", level: "Proficient", icon: "Terminal", note: "Data analysis, ML scripting & FastAPI" }
+      { name: "TypeScript", level: "Proficient", icon: "FileCode", note: "Static typing, interfaces & generics" }
+    ]
+  },
+  {
+    category: "AI, Machine Learning & Data Science",
+    description: "End-to-end data pipelines, ML algorithms, visualization, and intelligent models",
+    skills: [
+      { name: "Machine Learning", level: "Proficient", icon: "Brain", note: "Random Forest, Logistic Regression, SVC, Model Evaluation" },
+      { name: "Deep Learning & LLMs", level: "Hands-on", icon: "Cpu", note: "EfficientNet-B0, CNNs, Transformers, GenAI (IISc Certified)" },
+      { name: "Scikit-learn", level: "Proficient", icon: "Boxes", note: "Classification, regression, pipeline scaling & metrics" },
+      { name: "Pandas & NumPy", level: "Advanced", icon: "Table", note: "Data manipulation, cleaning, feature engineering & arrays" },
+      { name: "Matplotlib & Seaborn", level: "Advanced", icon: "LineChart", note: "Exploratory Data Analysis (EDA), heatmaps & distributions" },
+      { name: "Power BI", level: "Proficient", icon: "BarChart3", note: "Interactive business dashboards, KPI reporting & visual analytics" },
+      { name: "FastAPI", level: "Proficient", icon: "Network", note: "High-performance async APIs for ML model serving" }
     ]
   },
   {
@@ -49,11 +62,11 @@ export const skillCategories = [
     ]
   },
   {
-    category: "Developer Tools",
-    description: "Modern developer workflow, version control, testing, and IDEs",
+    category: "Developer & Data Tools",
+    description: "Modern developer workflow, data analytics, version control, and IDEs",
     skills: [
-      { name: "Git", level: "Proficient", icon: "GitBranch", note: "Branching, merge workflows, CLI" },
-      { name: "GitHub", level: "Proficient", icon: "Github", note: "Collaboration, pull requests & code review" },
+      { name: "Power BI", level: "Proficient", icon: "BarChart3", note: "Data modeling, DAX queries & interactive dashboards" },
+      { name: "Git & GitHub", level: "Proficient", icon: "Github", note: "Version control, branching, PRs & code review" },
       { name: "Postman", level: "Proficient", icon: "Send", note: "API endpoint testing & mock requests" },
       { name: "VS Code", level: "Advanced", icon: "AppWindow", note: "Primary IDE, debugging & productivity setup" }
     ]

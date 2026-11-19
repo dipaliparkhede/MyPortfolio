@@ -120,12 +120,14 @@ export default function ResumeModal({ onClose }) {
               Technical Proficiencies
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300 print:text-slate-800">
-              <div><strong className="text-white print:text-black">Languages:</strong> Java, JavaScript (ES6+), TypeScript, Python</div>
+              <div><strong className="text-white print:text-black">Languages:</strong> Python, Java, JavaScript (ES6+), TypeScript</div>
+              <div><strong className="text-white print:text-black">AI & Machine Learning:</strong> Scikit-learn, Random Forest, Deep Learning (EfficientNet-B0), LLMs & GenAI, FastAPI</div>
+              <div><strong className="text-white print:text-black">Data Science & Analytics:</strong> Pandas, NumPy, Matplotlib, Seaborn, Power BI (Dashboards & KPI reporting)</div>
               <div><strong className="text-white print:text-black">Frontend:</strong> React.js, Next.js, Tailwind CSS, HTML5, CSS3</div>
               <div><strong className="text-white print:text-black">Backend:</strong> Node.js, Express.js, REST APIs, JWT Authentication</div>
               <div><strong className="text-white print:text-black">Databases:</strong> MongoDB, MySQL</div>
               <div><strong className="text-white print:text-black">Cloud & Infrastructure:</strong> AWS (EC2, S3, Load Balancers), Linux Administration</div>
-              <div><strong className="text-white print:text-black">Developer Tools:</strong> Git, GitHub, Postman, VS Code</div>
+              <div><strong className="text-white print:text-black">Developer Tools:</strong> Power BI, Git, GitHub, Postman, VS Code</div>
             </div>
           </div>
 
