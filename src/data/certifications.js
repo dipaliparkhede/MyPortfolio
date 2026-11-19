@@ -120,6 +120,26 @@ export const certifications = [
     hasFile: true
   },
   {
+    id: "swayam-computer-applications-business",
+    title: "Computer Applications in Business",
+    issuer: "SWAYAM (Ministry of Education, Govt. of India) – University of Mysore",
+    date: "December 2024 Exam | Issued: January 31, 2025",
+    score: "75% (5 Credit Course)",
+    scoreBreakdown: "Online Assignments: 30/30 (Perfect) | Proctored Exam: 45/70 | Total: 75/100",
+    totalCandidates: "SWAYAM MOOC National Platform",
+    credits: "5 Credits",
+    coordinator: "J. B. Nadda, National Coordinator, CEC, New Delhi & Prof. N. Nagaraja, Registrar (Evaluation), University of Mysore",
+    badgeText: "SWAYAM Certified",
+    category: "Business & Computer Applications",
+    credentialId: "MR19001304",
+    credentialUrl: "https://swayam.gov.in",
+    image: "/certificates/swayam-computer-applications-business.jpg",
+    pdfUrl: null,
+    description: "SWAYAM National MOOC 5-credit certification (Govt. of India – MoE) for successfully completing Computer Applications in Business with 75%, offered by Dr. MS Maheshan of University of Mysore. Evaluated via continuous online assessments (perfect 30/30) and proctored examination in December 2024.",
+    skillsLearned: ["Computer Applications", "Business Computing", "MS Office Suite", "Database Applications", "Business Communication Technology", "Information Systems"],
+    hasFile: true
+  },
+  {
     id: "infosys-python-data-science",
     title: "Python for Data Science",
     issuer: "Infosys Springboard",
