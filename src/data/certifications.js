@@ -120,6 +120,26 @@ export const certifications = [
     hasFile: true
   },
   {
+    id: "infosys-python-data-science",
+    title: "Python for Data Science",
+    issuer: "Infosys Springboard",
+    date: "August 20, 2026",
+    score: "Course Completion",
+    scoreBreakdown: "Issued on: Thursday, August 20, 2026 | Verify at: verify.onwingspan.com",
+    totalCandidates: "Infosys Springboard Global Learning Platform",
+    credits: null,
+    coordinator: "Satheesha B. Nanjappa, Sr. Vice President & Head, Education, Training & Assessment, Infosys Limited",
+    badgeText: "Infosys Certified",
+    category: "AI & Machine Learning",
+    credentialId: "INFOSYS-PDS-2026-DP",
+    credentialUrl: "https://verify.onwingspan.com",
+    image: "/certificates/infosys-python-data-science.jpg",
+    pdfUrl: null,
+    description: "Course Completion Certificate from Infosys Springboard for successfully completing Python for Data Science — covering Python programming for data manipulation, analysis, visualization, and machine learning foundations using industry-standard libraries.",
+    skillsLearned: ["Python for Data Science", "Data Analysis", "Data Visualization", "Pandas & NumPy", "Matplotlib", "Machine Learning Basics"],
+    hasFile: true
+  },
+  {
     id: "ibm-ai-fundamentals",
     title: "Artificial Intelligence Fundamentals",
     issuer: "IBM SkillsBuild",
