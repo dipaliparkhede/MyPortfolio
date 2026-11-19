@@ -14,7 +14,7 @@ export const certifications = [
     credentialId: "NPTEL26CS95S682705022",
     credentialUrl: "https://nptel.ac.in",
     image: "/certificates/nptel-generative-ai-llm.jpg",
-    pdfUrl: "/certificates/nptel-generative-ai-llm.pdf",
+    pdfUrl: null,
     description: "Prestigious 12-week NPTEL Elite certification from IISc Bangalore. Mastered transformer architectures, tokenization, prompt engineering, fine-tuning strategies, and practical deployment of Large Language Models.",
     skillsLearned: ["Generative AI", "Transformer Architecture", "Large Language Models", "Prompt Engineering", "Fine-Tuning", "Deep Learning"],
     hasFile: true
@@ -34,7 +34,7 @@ export const certifications = [
     credentialId: "NPTEL26CS162S862703456",
     credentialUrl: "https://nptel.ac.in",
     image: "/certificates/nptel-dsa-java.jpg",
-    pdfUrl: "/certificates/nptel-dsa-java.pdf",
+    pdfUrl: null,
     description: "12-week NPTEL Elite certification from IIT Kharagpur covering algorithmic problem-solving in Java: linked lists, stacks, queues, trees, heaps, graphs, hashing, sorting, and dynamic programming.",
     skillsLearned: ["Data Structures in Java", "Algorithmic Complexity (Big-O)", "Trees & Graph Algorithms", "Dynamic Programming", "Recursion", "Sorting Algorithms"],
     hasFile: true
