@@ -17,13 +17,42 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = (e) => {
-    if (e) e.preventDefault();
+    if (e && e.preventDefault) e.preventDefault();
+    if (e && e.stopPropagation) e.stopPropagation();
+
+    // 1. Standard window smooth scroll
+    try {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    } catch {
+      window.scrollTo(0, 0);
+    }
+
+    // 2. Scrolling element fallback (for Safari / mobile / container scroll)
+    const scrollElem = document.scrollingElement || document.documentElement || document.body;
+    if (scrollElem) {
+      try {
+        scrollElem.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
+      } catch {
+        // silent fallback
+      }
+    }
+
+    // 3. Target #home hero section
     const homeEl = document.getElementById('home');
     if (homeEl) {
-      homeEl.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      document.documentElement.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      try {
+        homeEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } catch {
+        // silent fallback
+      }
     }
   };
 
@@ -110,29 +139,27 @@ export default function Footer() {
           </div>
 
           {/* Back to top column */}
-          <div className="md:col-span-2 flex md:justify-end">
+          <div className="md:col-span-2 flex flex-col items-center md:items-end justify-center">
             <button
               type="button"
               onClick={scrollToTop}
               aria-label="Back to top of page"
-              className="btn-3d flex items-center gap-2 px-5 py-3 rounded-xl text-xs font-semibold bg-gradient-to-r from-violet-600/30 to-cyan-500/30 hover:from-violet-600 hover:to-cyan-500 text-white border border-violet-500/40 hover:border-cyan-400 shadow-lg shadow-violet-600/20 hover:shadow-cyan-500/30 transition-all duration-300 group cursor-pointer"
+              title="Back to top"
+              className="btn-3d group flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-violet-600/30 via-indigo-600/30 to-cyan-500/30 hover:from-violet-600 hover:via-indigo-600 hover:to-cyan-500 text-white border border-violet-500/40 hover:border-cyan-400 shadow-lg shadow-violet-600/20 hover:shadow-cyan-500/30 transition-all duration-300 cursor-pointer active:scale-95"
             >
-              <span>Back to Top</span>
-              <ArrowUp className="w-4 h-4 text-cyan-400 group-hover:text-white group-hover:-translate-y-1 transition-all duration-300" />
+              <span className="text-xs font-semibold tracking-wide">Back to Top</span>
+              <div className="w-7 h-7 rounded-xl bg-white/10 group-hover:bg-white/20 flex items-center justify-center border border-white/15 transition-all shadow-inner">
+                <ArrowUp className="w-4 h-4 text-cyan-300 group-hover:text-white group-hover:-translate-y-1 transition-transform duration-300" />
+              </div>
             </button>
           </div>
 
         </div>
 
         {/* Bottom Credits */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-slate-500 text-center">
           <div>
             © {currentYear} {personalInfo.fullName}. All rights reserved.
-          </div>
-          <div className="flex items-center gap-1.5 text-slate-400">
-            <span>Crafted with</span>
-            <span className="text-rose-500 animate-pulse">♥</span>
-            <span>using React, Tailwind CSS & Vite</span>
           </div>
         </div>
 
