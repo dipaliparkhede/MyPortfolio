@@ -58,6 +58,56 @@ export const projects = [
     ]
   },
   {
+    id: "medicare-healthcare",
+    name: "MediCare – Healthcare Management & Patient Portal",
+    category: "Healthcare",
+    secondaryCategories: ["Healthcare", "Full Stack Development"],
+    badge: "Independently Developed",
+    isFeatured: true,
+    github: "https://github.com/dipaliparkhede/MediCare_Helthcare_Project",
+    liveDemo: null,
+    gradient: "from-teal-600 via-emerald-600 to-cyan-700",
+    accentColor: "#0D9488",
+    tagline: "Comprehensive full-stack clinical management platform for appointments, digital health records & e-prescriptions",
+    description: "MediCare is an independently developed full-stack healthcare platform connecting patients, doctors, and hospital administrators through an integrated medical workflow.",
+    overview: "Engineered independently from scratch as a production-style full-stack healthcare solution. MediCare bridges critical communication and booking friction in medical operations. It features patient appointment scheduling with real-time slot verification, digital electronic health records (EHR), physician consultation dashboards, prescription tracking, and administrative governance with role-based security.",
+
+    keyFeatures: [
+      "Role-Based Healthcare Dashboards: Dedicated secure workflows for Patients, Physicians/Doctors, and Clinical Administrators.",
+      "Interactive Appointment Scheduling: Real-time appointment booking with doctor specialty filters, consultation slots, and booking status.",
+      "Digital Health Records & Prescriptions: Secure storage, diagnosis notes, medication dosages, and patient clinical history.",
+      "Physician Availability Manager: Doctors can configure clinic consultation hours, review assigned patient queues, and update visit summaries.",
+      "Specialty Department Directory: Filter doctors across Cardiology, Neurology, Pediatrics, Orthopedics, and General Medicine.",
+      "Administrative Governance & Analytics: Monitor patient registrations, department traffic, appointment fulfillment, and hospital telemetry.",
+      "Role-Guarded Security: JWT authentication with bcrypt password hashing and protected health data routes."
+    ],
+
+    techStack: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "JWT Auth",
+      "Vite",
+      "RESTful API"
+    ],
+
+    architecture: {
+      frontend: "React 18 SPA with Vite, Tailwind CSS, Lucide medical icons, responsive appointment calendars and portals.",
+      backend: "Node.js & Express.js REST API structured with MVC architecture, role-based JWT middleware, and clinical validators.",
+      database: "MongoDB with Mongoose schemas for Patients, Doctors, Appointments, Prescriptions, and Departments.",
+      security: "Bcryptjs password encryption, JWT stateless token session guards, sanitized clinical inputs, and CORS."
+    },
+
+    highlights: [
+      { label: "Architecture", val: "MERN Full Stack" },
+      { label: "Role Portals", val: "3 Isolated" },
+      { label: "Status", val: "Independently Developed" },
+      { label: "Security", val: "JWT & Role Guards" }
+    ]
+  },
+  {
     id: "krushimitra-ai",
     name: "KrushiMitra AI – Agriculture Advisory",
     category: "AI & Machine Learning",

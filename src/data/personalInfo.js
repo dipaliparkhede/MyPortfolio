@@ -26,8 +26,8 @@ export const personalInfo = {
   stats: [
     { label: "Hands-on Experience", value: "1+ Year", sub: "Frontend & Cloud" },
     { label: "Education Status", value: "MCA Student", sub: "Savitribai Phule Pune Univ" },
-    { label: "Key Projects", value: "4 Featured", sub: "Full Stack & AI / ML" },
-    { label: "Certifications", value: "5+ Verified", sub: "NPTEL, Oracle, AWS" }
+    { label: "Key Projects", value: "5 Featured", sub: "Full Stack & Healthcare" },
+    { label: "Certifications", value: "9 Verified", sub: "NPTEL, Oracle, IBM" }
   ],
 
   careerJourney: [

@@ -67,6 +67,19 @@ My technical interests include frontend development, backend development, databa
 
 ---
 
+### 🏥 **MediCare — Healthcare Management & Patient Portal Platform**
+*Category: Independently Developed \| Full Stack MERN Healthcare Solution*  
+🔗 **Repository:** [https://github.com/dipaliparkhede/MediCare_Helthcare_Project](https://github.com/dipaliparkhede/MediCare_Helthcare_Project)  
+**Tech Stack:** React.js, Node.js, Express.js, MongoDB, Tailwind CSS, JWT Authentication, RESTful API, Vite  
+- **Role-Based Healthcare Dashboards:** Dedicated secure portals for **Patients, Doctors, and Clinical Administrators**.
+- **Interactive Appointment Booking:** Real-time doctor availability consultation booking with specialty department filters and instant confirmation.
+- **Digital Health Records & E-Prescriptions:** Electronic storage and retrieval of diagnoses, prescriptions, and patient clinical consultation logs.
+- **Physician Availability Manager:** Doctors can configure consultation slots, review assigned patient queues, and update visit summaries.
+- **Specialty Department Directory:** Medical specialist filtering across Cardiology, Neurology, Pediatrics, Orthopedics, and General Medicine.
+- **Clinical Governance & Analytics:** Real-time monitoring of patient registrations, department load, and hospital administrative operations.
+
+---
+
 ### 🌾 **KrushiMitra AI — Agriculture Advisory Platform**
 *Category: Academic / Collaborative Project \| AI & Machine Learning*  
 🔗 **Repository:** [https://github.com/dipaliparkhede/KrushiMitraAI_Application_Project](https://github.com/dipaliparkhede/KrushiMitraAI_Application_Project)  
