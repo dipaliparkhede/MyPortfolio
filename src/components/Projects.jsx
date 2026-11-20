@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { projects, projectCategories } from '../data/projects';
 import ProjectModal from './ProjectModal';
+import TiltCard from './TiltCard';
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('All Projects');
@@ -30,7 +31,7 @@ export default function Projects() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-violet-500/20 bg-violet-500/10 text-violet-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
+            <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-spin-slow" />
             <span>Featured Portfolio Works</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white dark:text-white text-slate-900 tracking-tight">
@@ -38,7 +39,7 @@ export default function Projects() {
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-violet-500 to-cyan-400 rounded-full mt-3 mb-4" />
           <p className="max-w-2xl text-slate-400 dark:text-slate-400 text-slate-600 text-sm sm:text-base">
-            Showcasing an enterprise-grade full-stack recruitment portal alongside machine learning and healthcare diagnostic applications.
+            Showcasing an enterprise-grade full-stack recruitment portal alongside machine learning and healthcare diagnostic applications with interactive 3D perspective previews.
           </p>
         </div>
 
@@ -50,10 +51,10 @@ export default function Projects() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
+                className={`btn-3d px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
                   isActive
-                    ? 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-600/30 scale-105'
-                    : 'glass-panel text-slate-300 dark:text-slate-300 text-slate-600 hover:text-white hover:border-violet-500/40'
+                    ? 'bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 text-white shadow-lg shadow-violet-600/30 scale-105'
+                    : 'glass-panel text-slate-300 dark:text-slate-300 text-slate-600 hover:text-white hover:border-violet-500/50'
                 }`}
               >
                 {cat}
@@ -62,54 +63,56 @@ export default function Projects() {
           })}
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Projects 3D Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 perspective-1000">
           {filteredProjects.map((proj) => {
             const isJobConnect = proj.id === 'jobconnect';
 
             return (
-              <div
+              <TiltCard
                 key={proj.id}
-                className={`glass-panel rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1.5 ${
+                maxTilt={isJobConnect ? 6 : 9}
+                scale={1.018}
+                className={`glass-panel rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 group hover-card-3d ${
                   isJobConnect
-                    ? 'border-2 border-violet-500/60 shadow-xl shadow-violet-600/15 ring-1 ring-violet-500/30 lg:col-span-2'
-                    : 'border border-white/10 dark:border-white/10 border-slate-200 hover:border-violet-500/40'
+                    ? 'border-2 border-violet-500/60 shadow-xl shadow-violet-600/20 ring-1 ring-violet-500/40 lg:col-span-2'
+                    : 'border border-white/10 dark:border-white/10 border-slate-200 hover:border-violet-500/50'
                 }`}
               >
                 {/* Visual Header / Banner */}
-                <div className={`relative p-6 sm:p-8 bg-gradient-to-r ${proj.gradient} text-white overflow-hidden`}>
+                <div className={`relative p-6 sm:p-8 bg-gradient-to-r ${proj.gradient} text-white overflow-hidden translate-z-10`}>
                   {/* Subtle pattern overlay */}
-                  <div className="absolute inset-0 bg-black/20 backdrop-blur-[1px]" />
+                  <div className="absolute inset-0 bg-black/25 backdrop-blur-[1px]" />
                   
                   <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 tracking-wide uppercase">
+                      <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 tracking-wide uppercase shadow-sm">
                         {proj.category}
                       </span>
                       {proj.isFeatured && (
-                        <span className="flex items-center gap-1 text-xs font-bold px-3 py-1 rounded-full bg-amber-400 text-slate-950 shadow-sm">
+                        <span className="flex items-center gap-1 text-xs font-bold px-3 py-1 rounded-full bg-amber-400 text-slate-950 shadow-md shadow-amber-400/20 animate-pulse-subtle">
                           <Star className="w-3.5 h-3.5 fill-current" />
                           <span>Special Priority</span>
                         </span>
                       )}
                     </div>
-                    <span className="text-xs font-mono text-white/80 px-2.5 py-1 rounded-md bg-black/30">
+                    <span className="text-xs font-mono text-white/90 px-2.5 py-1 rounded-md bg-black/40 border border-white/10">
                       {proj.badge}
                     </span>
                   </div>
 
-                  <div className="relative z-10">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">
+                  <div className="relative z-10 translate-z-20">
+                    <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2 drop-shadow-md">
                       {proj.name}
                     </h3>
-                    <p className="text-sm text-white/90 line-clamp-2 max-w-2xl">
+                    <p className="text-sm text-white/90 line-clamp-2 max-w-2xl leading-relaxed">
                       {proj.tagline}
                     </p>
                   </div>
                 </div>
 
                 {/* Body Content */}
-                <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between translate-z-10">
                   <div>
                     {/* Short Description */}
                     <p className="text-sm sm:text-base text-slate-300 dark:text-slate-300 text-slate-600 leading-relaxed mb-6">
@@ -122,7 +125,7 @@ export default function Projects() {
                         Key Features:
                       </span>
                       {proj.keyFeatures.slice(0, isJobConnect ? 4 : 3).map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-300 dark:text-slate-300 text-slate-600">
+                        <div key={fIdx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-300 dark:text-slate-300 text-slate-600 group-hover:text-slate-200 transition-colors">
                           <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
                           <span className="line-clamp-2">{feat}</span>
                         </div>
@@ -138,7 +141,7 @@ export default function Projects() {
                         {proj.techStack.map((tech) => (
                           <span
                             key={tech}
-                            className="px-2.5 py-1 rounded-lg text-xs font-medium bg-white/5 dark:bg-white/5 bg-slate-100 text-violet-300 dark:text-violet-300 text-violet-700 border border-white/10 dark:border-white/10 border-slate-200"
+                            className="px-2.5 py-1 rounded-lg text-xs font-medium bg-white/5 dark:bg-white/5 bg-slate-100 text-violet-300 dark:text-violet-300 text-violet-700 border border-white/10 dark:border-white/10 border-slate-200 group-hover:border-violet-500/40 hover:scale-105 transition-all"
                           >
                             {tech}
                           </span>
@@ -148,13 +151,13 @@ export default function Projects() {
                   </div>
 
                   {/* Actions Bar */}
-                  <div className="pt-4 border-t border-white/10 dark:border-white/10 border-slate-200 flex flex-wrap items-center justify-between gap-3">
+                  <div className="pt-4 border-t border-white/10 dark:border-white/10 border-slate-200 flex flex-wrap items-center justify-between gap-3 translate-z-20">
                     <div className="flex items-center gap-3">
                       <a
                         href={proj.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-slate-800 hover:bg-slate-700 dark:bg-navy-800 dark:hover:bg-navy-700 border border-white/10 transition-all hover:scale-105"
+                        className="btn-3d flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-slate-800 hover:bg-slate-700 dark:bg-navy-800 dark:hover:bg-navy-700 border border-white/10"
                       >
                         <Github className="w-4 h-4" />
                         <span>Source Code</span>
@@ -165,7 +168,7 @@ export default function Projects() {
                           href={proj.liveDemo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-500 transition-all"
+                          className="btn-3d flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-500"
                         >
                           <ExternalLink className="w-4 h-4" />
                           <span>Live Demo</span>
@@ -175,7 +178,7 @@ export default function Projects() {
 
                     <button
                       onClick={() => setActiveModalProject(proj)}
-                      className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-violet-400 dark:text-violet-400 text-violet-700 hover:text-cyan-400 hover:bg-violet-500/10 transition-colors group/btn"
+                      className="btn-3d flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-violet-400 dark:text-violet-400 text-violet-700 hover:text-cyan-400 hover:bg-violet-500/10 group/btn"
                     >
                       <Eye className="w-4 h-4" />
                       <span>View Full Details</span>
@@ -183,7 +186,7 @@ export default function Projects() {
                     </button>
                   </div>
                 </div>
-              </div>
+              </TiltCard>
             );
           })}
         </div>

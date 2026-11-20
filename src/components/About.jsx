@@ -11,6 +11,7 @@ import {
   ArrowUpRight
 } from 'lucide-react';
 import { personalInfo } from '../data/personalInfo';
+import TiltCard from './TiltCard';
 
 export default function About() {
   const statIcons = [
@@ -27,7 +28,7 @@ export default function About() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-violet-500/20 bg-violet-500/10 text-violet-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
+            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
             <span>Profile & Background</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white dark:text-white text-slate-900 tracking-tight">
@@ -36,35 +37,41 @@ export default function About() {
           <div className="w-16 h-1 bg-gradient-to-r from-violet-500 to-cyan-400 rounded-full mt-3" />
         </div>
 
-        {/* Top Info Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-16">
+        {/* 3D Top Info Cards */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-16 perspective-1000">
           {personalInfo.stats.map((stat, idx) => (
-            <div
+            <TiltCard
               key={stat.label}
-              className="glass-card p-5 sm:p-6 rounded-2xl flex flex-col items-center text-center group"
+              maxTilt={10}
+              scale={1.035}
+              className="glass-card p-5 sm:p-6 rounded-2xl flex flex-col items-center text-center group hover-card-3d cursor-default"
             >
-              <div className="w-12 h-12 rounded-xl bg-white/5 dark:bg-white/5 bg-slate-100 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-white/5 dark:bg-white/5 bg-slate-100 flex items-center justify-center mb-3 group-hover:scale-110 group-hover:bg-violet-500/15 transition-all duration-300 translate-z-10 shadow-sm">
                 {statIcons[idx]}
               </div>
-              <span className="text-xl sm:text-2xl font-bold text-white dark:text-white text-slate-900 tracking-tight">
+              <span className="text-xl sm:text-2xl font-bold text-white dark:text-white text-slate-900 tracking-tight translate-z-20">
                 {stat.value}
               </span>
-              <span className="text-sm font-semibold text-violet-400 dark:text-violet-400 text-violet-600 mt-0.5">
+              <span className="text-sm font-semibold text-violet-400 dark:text-violet-400 text-violet-600 mt-0.5 translate-z-10">
                 {stat.label}
               </span>
               <span className="text-xs text-slate-400 dark:text-slate-400 text-slate-500 mt-1">
                 {stat.sub}
               </span>
-            </div>
+            </TiltCard>
           ))}
         </div>
 
         {/* Narrative & Philosophy Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start perspective-1000">
           
           {/* Narrative Column */}
           <div className="lg:col-span-6 flex flex-col gap-6">
-            <div className="glass-card p-6 sm:p-8 rounded-2xl">
+            <TiltCard
+              maxTilt={6}
+              scale={1.015}
+              className="glass-card p-6 sm:p-8 rounded-2xl hover-card-3d"
+            >
               <h3 className="text-xl font-bold text-white dark:text-white text-slate-900 mb-4 flex items-center gap-2">
                 <span>Who I Am</span>
                 <span className="text-cyan-400 text-sm font-normal">/ Full Stack Vision</span>
@@ -83,14 +90,14 @@ export default function About() {
               </p>
 
               <div className="mt-6 pt-6 border-t border-white/10 dark:border-white/10 border-slate-200 grid grid-cols-2 gap-4">
-                <div>
+                <div className="p-3 rounded-xl bg-white/5 dark:bg-white/5 bg-slate-100/50 hover:border-violet-500/30 transition-colors">
                   <span className="text-xs font-mono uppercase tracking-wider text-slate-400">Current Base:</span>
                   <p className="text-sm font-semibold text-white dark:text-white text-slate-900 mt-0.5 flex items-center gap-1.5">
                     <MapPin className="w-4 h-4 text-violet-400" />
                     Pune, Maharashtra
                   </p>
                 </div>
-                <div>
+                <div className="p-3 rounded-xl bg-white/5 dark:bg-white/5 bg-slate-100/50 hover:border-cyan-500/30 transition-colors">
                   <span className="text-xs font-mono uppercase tracking-wider text-slate-400">Primary Focus:</span>
                   <p className="text-sm font-semibold text-white dark:text-white text-slate-900 mt-0.5 flex items-center gap-1.5">
                     <CheckCircle className="w-4 h-4 text-emerald-400" />
@@ -98,12 +105,16 @@ export default function About() {
                   </p>
                 </div>
               </div>
-            </div>
+            </TiltCard>
           </div>
 
           {/* Career Journey Timeline Column */}
           <div className="lg:col-span-6">
-            <div className="glass-card p-6 sm:p-8 rounded-2xl">
+            <TiltCard
+              maxTilt={6}
+              scale={1.015}
+              className="glass-card p-6 sm:p-8 rounded-2xl hover-card-3d"
+            >
               <h3 className="text-xl font-bold text-white dark:text-white text-slate-900 mb-6 flex items-center gap-2">
                 <span>Personal Journey & Milestones</span>
               </h3>
@@ -112,7 +123,7 @@ export default function About() {
                 {personalInfo.careerJourney.map((step, idx) => (
                   <div key={idx} className="relative pl-7 group">
                     {/* Timeline Node */}
-                    <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-navy-900 dark:bg-navy-900 bg-white border-2 border-violet-400 group-hover:border-cyan-400 group-hover:scale-125 transition-all shadow-md shadow-violet-500/30" />
+                    <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-navy-900 dark:bg-navy-900 bg-white border-2 border-violet-400 group-hover:border-cyan-400 group-hover:scale-125 transition-all duration-300 shadow-md shadow-violet-500/30 group-hover:shadow-[0_0_12px_#38BDF8]" />
 
                     <div className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-cyan-400 dark:text-cyan-400 text-violet-600 mb-1">
                       <Calendar className="w-3.5 h-3.5" />
@@ -133,7 +144,7 @@ export default function About() {
                   </div>
                 ))}
               </div>
-            </div>
+            </TiltCard>
           </div>
 
         </div>

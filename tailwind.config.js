@@ -44,6 +44,7 @@ export default {
         'float-slow': 'float 9s ease-in-out infinite',
         'pulse-subtle': 'pulse-subtle 4s ease-in-out infinite',
         'glow': 'glow 3s ease-in-out infinite alternate',
+        'spin-slow': 'spin 18s linear infinite',
       },
       keyframes: {
         'gradient-x': {
@@ -65,7 +66,7 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-glow': 'radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.15) 0%, rgba(56, 189, 248, 0.08) 50%, transparent 100%)',
+        'hero-glow': 'radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.18) 0%, rgba(56, 189, 248, 0.09) 50%, transparent 100%)',
       }
     },
   },

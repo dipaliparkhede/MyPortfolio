@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   TrendingUp
 } from 'lucide-react';
+import TiltCard from './TiltCard';
 
 const achievementCards = [
   {
@@ -77,7 +78,7 @@ export default function Achievements() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-violet-500/20 bg-violet-500/10 text-violet-400 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Trophy className="w-3.5 h-3.5" />
+            <Trophy className="w-3.5 h-3.5 text-amber-400 animate-spin-slow" />
             <span>Key Accomplishments</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white dark:text-white text-slate-900 tracking-tight">
@@ -89,18 +90,21 @@ export default function Achievements() {
           </p>
         </div>
 
-        {/* Highlights Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Highlights 3D Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 perspective-1000">
           {achievementCards.map((card, idx) => {
             const Icon = card.icon;
             return (
-              <div
+              <TiltCard
                 key={idx}
-                className="glass-panel p-6 sm:p-7 rounded-3xl flex flex-col justify-between border border-white/10 dark:border-white/10 border-slate-200 hover:border-violet-500/40 hover:-translate-y-1 transition-all group"
+                maxTilt={10}
+                scale={1.03}
+                glare={true}
+                className="glass-panel p-6 sm:p-7 rounded-3xl flex flex-col justify-between border border-white/10 dark:border-white/10 border-slate-200 hover:border-violet-500/50 hover-card-3d transition-all group cursor-default"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-white/5 dark:bg-white/5 bg-slate-100 flex items-center justify-center text-violet-400 group-hover:scale-110 group-hover:text-cyan-400 transition-all">
+                  <div className="flex items-center justify-between gap-2 mb-4 translate-z-10">
+                    <div className="w-12 h-12 rounded-2xl bg-white/5 dark:bg-white/5 bg-slate-100 flex items-center justify-center text-violet-400 group-hover:scale-110 group-hover:bg-violet-500/15 group-hover:text-cyan-400 transition-all duration-300 shadow-sm">
                       <Icon className="w-6 h-6" />
                     </div>
                     <div className="flex flex-col items-end">
@@ -113,11 +117,11 @@ export default function Achievements() {
                     </div>
                   </div>
 
-                  <span className="text-xs font-mono font-semibold uppercase tracking-wider text-violet-400 dark:text-violet-400 text-violet-700 block mb-1">
+                  <span className="text-xs font-mono font-semibold uppercase tracking-wider text-violet-400 dark:text-violet-400 text-violet-700 block mb-1 translate-z-10">
                     {card.category}
                   </span>
 
-                  <h3 className="text-lg font-bold text-white dark:text-white text-slate-900 group-hover:text-violet-300 transition-colors mb-2">
+                  <h3 className="text-lg font-bold text-white dark:text-white text-slate-900 group-hover:text-violet-300 transition-colors mb-2 translate-z-20">
                     {card.title}
                   </h3>
 
@@ -126,11 +130,11 @@ export default function Achievements() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/10 dark:border-white/10 border-slate-200 flex items-center gap-2 text-xs text-emerald-400">
-                  <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
+                <div className="mt-6 pt-4 border-t border-white/10 dark:border-white/10 border-slate-200 flex items-center gap-2 text-xs text-emerald-400 translate-z-10">
+                  <CheckCircle2 className="w-4 h-4 flex-shrink-0 shadow-[0_0_6px_#10B981]" />
                   <span className="font-medium">Verified by Portfolio Transcripts</span>
                 </div>
-              </div>
+              </TiltCard>
             );
           })}
         </div>

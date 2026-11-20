@@ -12,6 +12,9 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import ResumeModal from './components/ResumeModal';
+import ScrollProgress from './components/ScrollProgress';
+import CursorSpotlight from './components/CursorSpotlight';
+import ParticleCanvas from './components/ParticleCanvas';
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -41,7 +44,6 @@ export default function App() {
   // Active section scroll spy via IntersectionObserver
   useEffect(() => {
     const sectionIds = ['home', 'about', 'skills', 'experience', 'projects', 'education', 'certifications', 'contact'];
-    const observers = [];
 
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
@@ -68,8 +70,17 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-navy-900 dark:bg-navy-900 bg-slate-50 text-text-main dark:text-text-main text-slate-900 transition-colors duration-300">
+    <div className="relative min-h-screen flex flex-col bg-navy-900 dark:bg-navy-900 bg-slate-50 text-text-main dark:text-text-main text-slate-900 transition-colors duration-300 overflow-x-hidden">
       
+      {/* 3D Top Scroll Progress Bar */}
+      <ScrollProgress />
+
+      {/* 3D Cursor Spotlight Effect */}
+      <CursorSpotlight />
+
+      {/* Interactive 3D Particle Constellation Background */}
+      <ParticleCanvas />
+
       {/* Sticky Header Navigation */}
       <Navbar
         activeSection={activeSection}
@@ -79,7 +90,7 @@ export default function App() {
       />
 
       {/* Main Portfolio Sections */}
-      <main className="flex-1">
+      <main className="relative z-10 flex-1">
         <Hero onOpenResume={() => setIsResumeOpen(true)} />
         <About />
         <Skills />

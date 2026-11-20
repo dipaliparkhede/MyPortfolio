@@ -108,7 +108,7 @@ export default function Contact() {
           <div className="lg:col-span-5 flex flex-col gap-6">
             
             {/* Contact Card */}
-            <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10">
+            <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 hover-card-3d">
               <h3 className="text-xl font-bold text-white dark:text-white text-slate-900 mb-6 flex items-center gap-2">
                 <span>Contact Channels</span>
               </h3>
@@ -222,7 +222,7 @@ export default function Contact() {
 
           {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
-            <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10">
+            <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 hover-card-3d">
               <h3 className="text-xl font-bold text-white dark:text-white text-slate-900 mb-2">
                 Send a Message
               </h3>
@@ -332,7 +332,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 shadow-lg shadow-violet-600/30 transition-all duration-300 active:scale-98 disabled:opacity-70"
+                  className="btn-3d w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 shadow-lg shadow-violet-600/30 disabled:opacity-70"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center gap-2">

@@ -96,7 +96,7 @@ export default function Navbar({ activeSection, theme, toggleTheme, onOpenResume
             
             <button
               onClick={onOpenResume}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-cyan-500 shadow-md shadow-violet-600/25 hover:shadow-cyan-500/25 transition-all duration-300 active:scale-95"
+              className="btn-3d flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 shadow-md shadow-violet-600/30"
             >
               <FileDown className="w-4 h-4" />
               <span>Resume</span>
