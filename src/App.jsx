@@ -106,7 +106,7 @@ export default function App() {
       <Footer />
 
       {/* Floating Scroll to Top */}
-      <BackToTop />
+      {/* <BackToTop /> */}
 
       {/* Resume In-App Viewer Modal */}
       {isResumeOpen && (
